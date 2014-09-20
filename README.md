@@ -1,2 +1,2 @@
-# Hyperstore documentation
+## Hyperstore documentation
 

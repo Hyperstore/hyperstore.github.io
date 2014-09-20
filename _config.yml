@@ -26,7 +26,7 @@ github:
   repo:           https://github.com/hyperstore.doc
 
 docs:
-- ['/', 'Home', 'Home']
+- ['index.html', 'Home', 'Home']
 - ['GettingStarted-CreateAnObservableDomain', 'Getting started', 'Create an observable domain']
 - ['GettingStarted-Undoredo', 'Getting started', 'Add undo/redo']
 - ['About', 'About', 'About']
