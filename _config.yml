@@ -1,0 +1,32 @@
+# Dependencies
+kramdown:
+  input: GFM   #Github Flavored Markdown
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Hyperstore documentation
+tagline:          The Jekyll Butler
+url:              http://doc.hyperstore.org
+paginate:         1
+baseurl:          /
+author:
+  name:           Alain Metge
+  url:            https://twitter.com/hyperstore
+  email:          alain.metge@zenasoft.com
+
+#readthedocs config
+#repo_url: https://github.
+homepage_url: /
+
+# Custom vars
+version:          1.0.0
+github:
+  repo:           https://github.com/hyperstore.doc
+
+docs:
+- ['/', 'Home', 'Home']
+- ['GettingStarted-CreateAnObservableDomain', 'Getting started', 'Create an observable domain']
+- ['GettingStarted-Undoredo', 'Getting started', 'Add undo/redo']
+- ['About', 'About', 'About']

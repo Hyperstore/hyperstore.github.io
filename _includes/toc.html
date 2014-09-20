@@ -1,0 +1,27 @@
+<ul class="current">
+{% assign current_group = nil %}
+{% for doc in site.docs %}
+    {% assign page_group = doc[1] %}
+    {% if page_group != nil %}
+        {% assign page_title = doc[2] %}
+        {% assign page_url = doc[0] %}
+        {% if page_group != current_group %}
+            {% if current_group != nil %}
+    </li>
+            {% endif %}
+            {% assign current_group = page_group %}
+    <li class="toctree-l1 {% if page.title == page_title%}current{%endif%}">
+        <a class="{% if page.title == page_title%}current{%endif%}" href="/{{ page_url }}">{{ page_group }}</a>
+        {% endif %}
+
+        {% if current_group == page_group %}
+            <ul>
+                <li class="toctree-l2"><a href="/{{ page_url }}">{{ page_title }}</a></li>
+            </ul>
+        {% endif %}
+    {% endif %}
+{% endfor %}
+{% if current_group != nil %}
+    </li>
+{% endif %}
+</ul>
