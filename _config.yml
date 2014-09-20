@@ -22,8 +22,7 @@ homepage_url: /
 
 # Custom vars
 version:          1.0.0
-github:
-  repo:           https://github.com/hyperstore.doc
+github_url:       https://github.com/hyperstore.doc
 
 docs:
 - ['index.html', 'Home', 'Home']
