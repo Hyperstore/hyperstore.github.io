@@ -1,6 +1,10 @@
 <ul class="current">
-{% assign parts = page.url | downcase | split: '-' %}
+{% assign parts = page.url | downcase | split: '/' %}
+{% if parts.size == 1 %}
 {% assign part_group = parts[0] %}
+{% else %}
+{% assign part_group = parts[1] %}
+{% endif %}
 {% assign current_group = nil %}
 {% for doc in site.docs %}
     {% assign page_group = doc[1] %}
@@ -12,7 +16,7 @@
     </li>
             {% endif %}
             {% assign current_group = page_group %}
-            {% assign group =  page_group  | replace: ' ', '' | downcase | prepend: '/' %}
+            {% assign group =  page_group  | replace: ' ', '' | downcase  %}
     <li class="toctree-l1 {% if part_group == group %}current{%endif%}">
         <a class="{% if part_group == group %}current{%endif%}" href="/{{ page_url }}">{{ page_group }}</a>
         {% endif %}
