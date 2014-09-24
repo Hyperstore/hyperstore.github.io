@@ -2,11 +2,17 @@
 layout: base
 title: Sample Observable domain
 ---
-This topic shows you how use Hyperstore to create a simple observable model running in a **MVVM** context.
+This topic shows you how use Hyperstore to create a simple observable model running in a **MVVM** context using the following **Hyperstore** features:
+1. Data binding
+2. Calculated property
+3. Custom type with validation rule
+4. Instanciation of a domain element in a session.
 
-Hyperstore is available as a Portable Class Library and can be used with the Microsoft Framework (from the 4.5.0 version), Windows Phone 8.0 and 8.1 and on IOS and Android thanks to Xamarin.
+> Hyperstore is available as a Portable Class Library and can be used with the Microsoft Framework (from the 4.5.0 version), Windows Phone 8.0 and 8.1 and on IOS and Android thanks to Xamarin.
 
-In this tutorial, you will create a simple customer with two simple properties, a calculated property and a property with a custom type containg its own validation rule.
+***
+
+In this tutorial, you will create a simple customer with two simple properties, a calculated property and a property with a custom type containing its own validation rule.
 
 This tutorial walks you through these basic steps :
 
@@ -30,36 +36,35 @@ You can edit directly this file, but it's more practical to use the Hyperstore V
 ![](img/AddHyperstoreExtension.png)
 
 ## Create a new domain
-<a name="Step2"></a>
-We will use the sample domain definition file added by the nuget package to define the new domain.
+<a name="Step2"></a>We will use the sample domain definition file added by the nuget package to define the new domain.
 This file is in the *Model*  folder.
 
 ![](img/Hierarchy.png)
 
 This new domain contains just a simple *Customer* definition.
 
-Edit the file and replace the current Library sample with the *Customer*  definition using the [Hyperstore Domain Language Syntax](/DomainLanguage/Syntax). The definition looks like the following code :
+* Edit the file and replace the current Library sample with the *Customer*  definition using the [Hyperstore Domain Language Syntax](/DomainLanguage/Syntax). The definition looks like the following code :
 
 ![](img/Domain1.png)
 
 This code defines a new Entity *Customer*  with three simple string properties.
 
-Add an **observable** attribute before the **domain** definition. By adding this attribute, your domain becomes *data binding ready*. Every changes on this domain (add, delete, update) will raise a NotifyPropertyChanged.
+* Add an **observable** attribute before the **domain** definition. By adding this attribute, your domain becomes *data binding ready*. Every changes on this domain (add, delete, update) will raise a NotifyPropertyChanged.
 
 > This feature works also for collection as you can see in the next sample.
 
-Next add a calculated property called FullName with the following code :
+* Next add a calculated property called FullName with the following code :
 ![](img/CalculatedProperty.png)
 
 The definition of this property mixes Hyperstore Domain Language (aka **HDL**) with native C# code. This is a specificity of **HDL**, you can add some C# code directly in the language (delimited by '{ }').
 
-Once the domain is (well) defined, the associated C# code is immediatly generated on background and the class is available for intelissense.
+Once the domain is (well) defined, the associated C# code is immediatly generated on background and the class is available for intellisense.
 
 ### Add a class to initialize the model
 
-The next step is to create a domain instance inside Hyperstore to begin for manipulate *Customer* entity.
+The next step is to create a domain instance inside Hyperstore to begin manipulate *Customer* entity.
 
-Create a class called *Model* and add the following code :
+* Create a class called *Model* and add the following code :
 
 ```csharp
 public Customer Customer {get; private set;}
@@ -76,15 +81,19 @@ public async Task Initialize()
 }
 ```
 
-This code create a new domain called 'Test' using the *MyModel* schema definition. The class *MyModelDefinition* has been generated from the domain definition file. Then an instance of *Customer* is created within the newly domain. Every model modification must be made within a session. A session is like a transaction supporting isolation, coherence and atomicity in multi-threading context.
+This code create a new domain called 'Test' using the *MyModel* schema definition. The *MyModelDefinition*  class has been generated from the domain definition file.
+Then an instance of *Customer*  is created within the newly domain. 
+
+> Every model modification must be made within a session. A session is like a transaction supporting isolation, coherence and atomicity in multi-threading context.
 
 Now we will bind the *Customer* to a view to display its properties.
 
 ### Add a simple view to display the *Customer*
 
-In the *mainwindow.xaml*, file add the xaml to display the properties in a *Grid*, for simplicity, copy the whole code from the [sample](https://github.com/Hyperstore/Hyperstore.Samples/blob/master/Hyperstore.Samples.Overview/Hyperstore.Samples.Overview/MainWindow.xaml).
+* In the *mainwindow.xaml*, file add the xaml to display the properties in a *Grid*, for simplicity, copy the whole code from the [sample](https://github.com/Hyperstore/Hyperstore.Samples/blob/master/Hyperstore.Samples.Overview/Hyperstore.Samples.Overview/MainWindow.xaml).
 
-Then in the code behind, add the code to initialize the data context.
+* Then in the code behind, add the code to initialize the data context.
+
 ```C#
 private async Task Initialize()
 {
@@ -93,7 +102,7 @@ private async Task Initialize()
   this.DataContext = model.Customer;
 }
 ```
-And then add the code to call the *Initialize* method.
+* And then add the code to call the *Initialize* method.
 
 ```C#
 public MainWindow()
@@ -102,18 +111,20 @@ public MainWindow()
     Initialize();
 }
 ```
-Run the program and see how all changes in the firstName or lastName properties are repercuted on the FullName property.
 
-Hyperstore has automaticly detected the FullName property dependencies and raises a property changed event if any is modified.
+* Run the program and see how all changes in the firstName or lastName properties are repercuted on the FullName property.
+
+> Hyperstore has automaticly detected the FullName property dependencies and raises a property changed event if any is modified.
 
 ### Add a Email custom type with its validation rule
 
-Now, we will see how add validation rule for specific type of the domain.
-For the moment, the Email is just a simple *string* and has not any validation rule. For an email, it will be nice to validate its format every time it will be updated.
+Now, we will see how adding validation rule for specific type of the domain.
 
-For that, we will create an new *Email* type. In **DDD** (Domain Driven Design), we can declare it as a *value object*. *HDL* uses the same concept to declare a new simple type (which it's not an entity). A **valueObject** overrides a primitive type like *string*, *double*, *int*,... or a immutable class like *CultureInfo*.
+For the moment, the Email is just a simple *string*  and has not any validation rule. For an email, it will be nice to validate its format every time it will be updated.
 
-To declare this new type, add the code at the beginning of the domain definition and change the type of the Email property to *Email*.
+For that, we will create an new *Email* type. In **DDD** (Domain Driven Design), we can declare it as a *value object*. *HDL* uses the same concept to declare a new simple type (which it's not an entity). A **valueObject** overrides a primitive type like *string*, *double*, *int*,... or an immutable class like *CultureInfo*.
+
+* To declare this new type, add the code at the beginning of the domain definition and change the type of the Email property to *Email*.
 
 ![](img/CustomType.png)
 
