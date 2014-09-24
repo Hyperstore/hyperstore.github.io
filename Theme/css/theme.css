@@ -92,7 +92,7 @@ sup {
 sub {
 	bottom: -0.25em;
 }
-ul, ol, dl {
+.wy-menu-vertical ul, ol, dl {
 	margin: 0;
 	padding: 0;
 	list-style-image: none;
@@ -3451,6 +3451,7 @@ img {
 }
 .rst-content ol {
 	margin-left:48px;
+	font-size:16px;
 }
 .rst-content blockquote {
 	margin-left: 0px;
