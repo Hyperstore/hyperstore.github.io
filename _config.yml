@@ -28,5 +28,5 @@ docs:
 - ['index.html', 'Home', 'Home']
 - ['GettingStarted/CreateAnObservableDomain', 'Getting started', 'Create an observable domain']
 - ['GettingStarted/Undoredo', 'Getting started', 'Add undo/redo']
-- ['Samples/overview', 'Samples', 'Observable domain']
+- ['Samples/Overview', 'Samples', 'Observable domain']
 - ['About', 'About', 'About']
