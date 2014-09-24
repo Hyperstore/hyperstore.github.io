@@ -112,7 +112,7 @@ img {
 	vertical-align: middle;
 	max-width: 100%;
 	display: block;
-	margin: auto;
+	margin-left:24px;
 }
 svg:not(:root){overflow:hidden}
 figure {
