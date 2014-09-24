@@ -32,17 +32,17 @@ You can edit directly this file, but it's more practical to use the Hyperstore V
 ## Create a new domain
 <a name="Step2"></a>
 We will use the sample domain definition file added by the nuget package to define the new domain.
-This file is in the *Model* folder.
+This file is in the *Model*  folder.
 
 ![](img/Hierarchy.png)
 
 This new domain contains just a simple *Customer* definition.
 
-Edit the file and replace the current Library sample with the *Customer* definition using the [Hyperstore Domain Language Syntax](/DomainLanguage/Syntax). The definition looks like the following code :
+Edit the file and replace the current Library sample with the *Customer*  definition using the [Hyperstore Domain Language Syntax](/DomainLanguage/Syntax). The definition looks like the following code :
 
 ![](img/Domain1.png)
 
-This code defines a new Entity *Customer* with three simple string properties.
+This code defines a new Entity *Customer*  with three simple string properties.
 
 Add an **observable** attribute before the **domain** definition. By adding this attribute, your domain becomes *data binding ready*. Every changes on this domain (add, delete, update) will raise a NotifyPropertyChanged.
 
@@ -61,7 +61,7 @@ The next step is to create a domain instance inside Hyperstore to begin for mani
 
 Create a class called *Model* and add the following code :
 
-```C#
+```csharp
 public Customer Customer {get; private set;}
 
 public async Task Initialize()
@@ -117,11 +117,13 @@ To declare this new type, add the code at the beginning of the domain definition
 
 ![](img/CustomType.png)
 
-The custom type is defined as a *string* and contains a constraint to validate the email format.
+The custom type is defined as a *string*  and contains a constraint to validate the email format.
 
-> Note the use of the variable **value** corresponding to the current value of the property.
+> Note the use of the variable **value** in the C# code corresponding to the current value of the property.
 
-Now, if you execute the program a warning will be displayed if your input is invalid. 
+Now, if you execute the program a warning will be displayed if your input is invalid.
+
+![](img/Error.png)
 
 
 
