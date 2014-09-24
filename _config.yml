@@ -1,3 +1,6 @@
+markdown: redcarpet
+pygments: true
+
 # Dependencies
 kramdown:
   input: GFM   #Github Flavored Markdown
