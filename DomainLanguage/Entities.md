@@ -7,7 +7,7 @@ title  : Hyperstore Domain Language
 
 Entities are declared using keywords **def entity**, as shown in the following example:
 
-```python
+```csharp
 def entity MyEntity
 {
 	// Properties, references and constraints definitions
@@ -15,7 +15,7 @@ def entity MyEntity
 ```
 If you want override another entity definition, use the **partial** keyword like this :
 
-```python
+```csharp
 def partial entity MyEntity
 {
 }
@@ -26,7 +26,7 @@ def partial entity MyEntity
 Unlike C#, inheritance and implementations use two distinct keywords :
 
 * **extends** for inheritance
-* **implemantations** for interface implementations
+* **implementations** for interface implementations
 
 | Inheritance | Example |
 |:---------------------------------------- | ---- |
@@ -49,7 +49,7 @@ By default, entity are generated as a *public partial class*. You can modify thi
 
 For exemple, to declare a **protected abstract** class, use the following syntax :
 
-```python
+```csharp
 [modifier("protected abstract")]
 def entity MyEntity {
 
