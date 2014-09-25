@@ -43,7 +43,7 @@ Relationship definition is mandatory and define three properties :
 Unlike C#, inheritance and implementations use two distinct keywords :
 
 * **extends** for inheritance
-* **implemantations** for interface implementations
+* **implementations** for interface implementations
 
 | Inheritance | Example |
 |:--------------------------------------- |-|

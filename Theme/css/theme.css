@@ -2431,6 +2431,7 @@ li.wy-form-gallery-edit .arrow {
 	border-spacing: 0;
 	empty-cells: show;
 	margin-bottom: 24px;
+	margin-left:48px;
 }
 .wy-table caption, .rst-content table caption, .rst-content table.field-list caption {
 	color: #000;
