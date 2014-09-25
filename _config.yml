@@ -1,4 +1,6 @@
 markdown: redcarpet
+redcarpet:
+ extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 highlighter: true
 
 # Dependencies
@@ -10,7 +12,6 @@ permalink:        pretty
 
 # Setup
 title:            Hyperstore documentation
-tagline:          The Jekyll Butler
 url:              http://doc.hyperstore.org
 paginate:         1
 baseurl:          /
@@ -31,6 +32,15 @@ docs:
 - ['index.html', 'Home', 'Home']
 - ['GettingStarted/CreateAnObservableDomain', 'Getting started', 'Create an observable domain']
 - ['DomainLanguage/Introduction', 'Domain Language', 'Introduction']
+- ['DomainLanguage/Domain', 'Domain Language', 'Domain']
+- ['DomainLanguage/Usings', 'Domain Language', 'Using']
+- ['DomainLanguage/Externals', 'Domain Language', 'Externals']
+- ['DomainLanguage/Entities', 'Domain Language', 'Entties']
+- ['DomainLanguage/Relationships', 'Domain Language', 'Relationships']
+- ['DomainLanguage/Enums', 'Domain Language', 'Enums']
+- ['DomainLanguage/Properties', 'Domain Language', 'Properties']
+- ['DomainLanguage/References', 'Domain Language', 'References']
+- ['DomainLanguage/ValueObjects', 'Domain Language', 'ValueObjects']
 - ['DomainLanguage/SyntaxReference', 'Domain Language', 'Reference']
 - ['Samples/Overview', 'Samples', 'Observable domain']
 - ['About', 'About', 'About']
