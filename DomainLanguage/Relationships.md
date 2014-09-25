@@ -26,7 +26,7 @@ Relationship definition is mandatory and define three properties :
 3. The relationship cardinality with the ***** operator.
 
 | Definition | Example |
-|:- |:- |
+|:-------------------------- |:- |
 | OneToOne, not embedded | (source -> target)|
 | OneToMany, not embedded | (source -> target*)|
 | OneToOne, embedded | (source => target)|
@@ -46,7 +46,7 @@ Unlike C#, inheritance and implementations use two distinct keywords :
 * **implemantations** for interface implementations
 
 | Inheritance | Example |
-|:-|-|
+|:--------------------------------------- |-|
 | Single| **def relationship** MyRelationship  (SourceEntityOrRelationship => TargetEntityOrRelationship*) **extends** BaseRelationship { } |
 | Interface implementations | **def relationship** MyRelationship  (SourceEntityOrRelationship => TargetEntityOrRelationship*) **implements** Interface1, Interface2 { } |
 | Single with interface implementations | **def relationship** MyRelationship   (SourceEntityOrRelationship => TargetEntityOrRelationship*) **extends** BaseRelationship **implements** Interface1, Interface2 { } |
