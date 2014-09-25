@@ -12,4 +12,17 @@ When a .domain file is included in a *Visual Studio Project* and if the **Hypers
 
 A .domain file can be edited with a specific Visual Studio extension providing syntax highlighting, colorization and completion available on [Visual Studio Gallery](http://visualstudiogallery.msdn.microsoft.com/7243e6ca-e7bd-44a6-92a5-50b0083f6287).
 
+A domain definition is included in a **domain** namespace and can contains many definitions :
+
+* Hyperstore entities and relationships ([see Hyperstore concepts for more infos](/Concepts))
+* References to another domain file
+* External type declaration to reuse existing C# types
+* Enums
+* Property constraints or elements constraints
+* ValueObjects to define type constraints
+
+![](img/Sample.png)
+
+
+
 
