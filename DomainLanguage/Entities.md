@@ -29,7 +29,7 @@ Unlike C#, inheritance and implementations use two distinct keywords :
 * **implemantations** for interface implementations
 
 | Inheritance | Example |
-|:-|-|
+|:--- | ---- |
 | Single| **def entity** MyEntity **extends** BaseEntity { } |
 | Interface implementations | **def entity** MyEntity **implements** Interface1, Interface2 { } |
 | Single with interface implementations | **def entity** MyEntity  **extends** BaseEntity **implements** Interface1, Interface2 { } |

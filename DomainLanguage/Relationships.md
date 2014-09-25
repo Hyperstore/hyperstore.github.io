@@ -26,7 +26,7 @@ Relationship definition is mandatory and define three properties :
 3. The relationship cardinality with the ***** operator.
 
 | Definition | Example |
-|:-|:-|
+|:- |:- |
 | OneToOne, not embedded | (source -> target)|
 | OneToMany, not embedded | (source -> target*)|
 | OneToOne, embedded | (source => target)|
