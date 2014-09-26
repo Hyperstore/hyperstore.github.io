@@ -7,19 +7,21 @@ title  : Hyperstore Domain Language
 
 Relationships are declared using keywords **def relationship** and must declare the relationship definition, as shown in the following example:
 
-```python
+```csharp
 def relationship MyRelationship (SourceEntityOrRelationship => TargetEntityOrRelationship*)
 {
 	// Properties, references and constraints definitions
 }
 ```
+
 If you want override another relationship definition, use the **partial** keyword like this :
 
-```python
+```csharp
 def partial relationship MyRelationship (SourceEntityOrRelationship => TargetEntityOrRelationship*)
 {
 }
 ```
+
 Relationship definition is mandatory and define three properties :
 1. The source and target type of the relationship.
 2. If this is an embedded relationship or not with respectively the **=>** and **->** operators.
@@ -66,7 +68,7 @@ By default, relationship are generated as a *public partial class*. You can modi
 
 For exemple, to declare a **protected abstract** class, use the following syntax :
 
-```python
+```csharp
 [modifier("protected abstract")]
 def relationship MyRelationship (SourceEntityOrRelationship => TargetEntityOrRelationship*) {
 

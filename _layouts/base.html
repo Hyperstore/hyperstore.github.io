@@ -1,4 +1,18 @@
 <!DOCTYPE html>
+{% assign previous_page = nil %}
+{% assign tmp_previous_page = nil %}
+{% assign next_page = nil %}
+{% assign take_next = false %}
+{% for doc in site.docs %}
+    {% if doc[1] != nil %}
+      {% if take_next %}{% assign next_page = doc[0]%}{% assign take_next = false%}{% endif %}
+      {% if doc[0] == page.url %}
+        {% assign previous_page = tmp_previous_page %}
+        {% assign take_next = true %}
+      {% endif %}
+      {% assign tmp_previous_page = doc[0] %}
+    {% endif %}
+{% endfor %}
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
@@ -59,8 +73,8 @@
           <div role="main">
             {{ content }}
           </div>
-          {% include comments.html %}
           {% include footer.html %}
+          {% include comments.html %}
           {% include google_analytics.html %}
         </div>
       </div>
@@ -70,24 +84,10 @@
   </div>
 
 <div class="rst-versions" role="note" style="cursor: pointer">
-{% assign previous_page = nil %}
-{% assign tmp_previous_page = nil %}
-{% assign next_page = nil %}
-{% assign take_next = false %}
-{% for doc in site.docs %}
-      {% if doc[1] != nil %}
-        {% if take_next %}{% assign next_page = doc[0]%}{% assign take_next = false%}{% endif %}
-        {% if doc[2] == page.title %}
-          {% assign previous_page = tmp_previous_page %}
-          {% assign take_next = true %}
-        {% endif %}
-        {% assign tmp_previous_page = doc[0] %}
-      {% endif %}
-  {% endfor %}
     <span class="rst-current-version" data-toggle="rst-current-version">
       <a class="icon icon-github" style="float: left; color: #fcfcfc" href={{ github_url }}> GitHub</a>
       {% if previous_page != nil %}
-      <span><a href="/{{ previous_page }}" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span><a href="{{ previous_page }}" style="color: #fcfcfc;">&laquo; Previous</a></span>
       {% endif %}
       <span style="margin-left: 15px">{% if next_page != nil %}<a href="{{ next_page }}" style="color: #fcfcfc">Next &raquo;</a>{% endif %}</span>
    </span>

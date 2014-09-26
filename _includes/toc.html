@@ -18,12 +18,12 @@
             {% assign current_group = page_group %}
             {% assign group =  page_group  | replace: ' ', '' | downcase  %}
     <li class="toctree-l1 {% if part_group == group %}current{%endif%}">
-        <a class="{% if part_group == group %}current{%endif%}" href="/{{ page_url }}">{{ page_group }}</a>
+        <a class="{% if part_group == group %}current{%endif%}" href="{{ page_url }}">{{ page_group }}</a>
         {% endif %}
 
         {% if part_group == group %}
             <ul>
-                <li class="toctree-l2"><a href="/{{ page_url }}">{{ page_title }}</a></li>
+                <li class="toctree-l2"><a href="{{ page_url }}">{{ page_title }}</a></li>
             </ul>
         {% endif %}
     {% endif %}

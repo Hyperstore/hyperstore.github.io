@@ -1,9 +1,19 @@
+<br/><br/>
 <footer>
+	<div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        {% if next_page != nil %}
+        <a href="{{ next_page }}" class="btn btn-neutral float-right">
+        	Next <span class="fa-arrow-circle-right"></span></a>
+        {% endif %}
+        {% if previous_page != nil %}
+        <a href="{{ previous_page }}" class="btn btn-neutral"><span class="fa-arrow-circle-left">
+        </span> Previous</a>
+        {% endif %}
+    </div>
   <hr/>
 
   <div role="contentinfo">
     <p>
-    <!-- Copyright etc -->
     Copyright (c) 2014 - Zenasoft
     </p>
   </div>

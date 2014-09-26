@@ -3,6 +3,7 @@ layout: base
 title: Sample Observable domain
 ---
 This topic shows you how use Hyperstore to create a simple observable model running in a **MVVM** context using the following **Hyperstore** features:
+
 1. Data binding
 2. Calculated property
 3. Custom type with validation rule
@@ -94,7 +95,7 @@ Now we will bind the *Customer* to a view to display its properties.
 
 * Then in the code behind, add the code to initialize the data context.
 
-```C#
+```csharp
 private async Task Initialize()
 {
   var model = new Model();
@@ -102,9 +103,10 @@ private async Task Initialize()
   this.DataContext = model.Customer;
 }
 ```
+
 * And then add the code to call the *Initialize* method.
 
-```C#
+```csharp
 public MainWindow()
 {
 	InitializeComponent();

@@ -3259,6 +3259,19 @@ footer p {
 	display: table;
 	content: "";
 }
+span.fa-arrow-circle-left, span.fa-arrow-circle-right {
+	font-family: fontawesome-webfont;
+	display: inline-block;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+}
+.fa-arrow-circle-left:before {
+	content : "";
+}
+.fa-arrow-circle-right:after {
+	content : "";
+}
 .rst-footer-buttons:after {
 	clear: both;
 }
