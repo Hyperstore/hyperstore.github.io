@@ -22,7 +22,7 @@ author:
 
 #readthedocs config
 #repo_url: https://github.
-homepage_url: /
+homepage_url: http://www.hyperstore.org
 
 # Custom vars
 version:          1.0.0
