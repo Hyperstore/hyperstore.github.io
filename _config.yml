@@ -11,8 +11,8 @@ kramdown:
 permalink:        pretty
 
 # Setup
-title:            Hyperstore documentation
-url:              http://doc.hyperstore.org
+title:            Hyperstore
+url:              http://www.hyperstore.org
 paginate:         1
 baseurl:          /
 author:
@@ -29,8 +29,16 @@ version:          1.0.0
 github_url:       https://github.com/hyperstore.doc
 
 docs:
-- ['/index.html', 'Home', 'Home']
-- ['/GettingStarted/CreateAnObservableDomain/', 'Getting started', 'Create an observable domain']
+- ['/index.html', 'Home', 'Hyperstore documentation']
+- ['/GettingStarted/Overview/', 'Getting started', 'Hyperstore overview']
+- ['/GettingStarted/Overview/', 'Getting started', 'Concepts']
+- ['/GettingStarted/Overview/', 'Getting started', 'Architecture']
+- ['/GettingStarted/Overview/', 'Getting started', 'Schema']
+- ['/GettingStarted/Overview/', 'Getting started', 'Store and domain']
+- ['/GettingStarted/Overview/', 'Getting started', 'Session']
+- ['/GettingStarted/Overview/', 'Getting started', 'Events']
+- ['/GettingStarted/Overview/', 'Getting started', 'Constraints']
+- ['/GettingStarted/Overview/', 'Getting started', 'Commands']
 - ['/DomainLanguage/Introduction/', 'Domain Language', 'Introduction']
 - ['/DomainLanguage/Domain/', 'Domain Language', 'Domain']
 - ['/DomainLanguage/Usings/', 'Domain Language', 'Using']
