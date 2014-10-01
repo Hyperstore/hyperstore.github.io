@@ -33,15 +33,15 @@ You can define a schema in many ways :
 
 For example, the following textual DSL describes a simple Library domain with books, members and loans.
 
-![](/GettingStarted/img/o-dsl.png)
+![](/GettingStarted/img/O-dsl.png)
 
 * [Hyperstore Textual Language](/DomainLanguage/Introduction) is a very easy way to describe a domain. This sample generates the following C# code corresponding at something you can write if you use the code first way.
 
-![](/GettingStarted/img/o-codefirst.png)
+![](/GettingStarted/img/O-codefirst.png)
 
 * Finally you can use the customized DSL Tools designer to define the same domain.
 
-![](/GettingStarted/img/o-dsltools.png)
+![](/GettingStarted/img/O-dsltools.png)
 
 #### Using a schema to instanciate a domain model
 
