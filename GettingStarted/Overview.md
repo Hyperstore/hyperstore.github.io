@@ -5,7 +5,8 @@ title: Overview
 
 ### Hyperstore overview
 
-Hyperstore is a modeling framework providing its own transactional in-memory database. To use it, you must define a domain model with a schema definition and load the domain into Hyperstore. Many domains can be load in Hyperstore and you can create references between elements from different domains. Each element belongs to a specific domain.
+Hyperstore is a modeling framework providing its own transactional in-memory database. To use it, you must define a domain model with a schema definition and load the domain into Hyperstore.
+Many domains can be load in Hyperstore and you can create references between elements from different domains. Each element belongs to a specific domain.
 
 Once a domain is loaded, every changes made on domain elements will raise events including property changes, reference changes and element lifecycles.
 
@@ -20,7 +21,7 @@ This topic describes brievely the main Hyperstore features.
 
 #### Schema definition
 
-A schema describe a domain and is mandatory to begin manipulate elements in a domain. 
+A schema describe a domain and is mandatory to begin manipulate elements in a domain.
 
 > Hyperstore provides a simple schema definition but you can extends it and create your own schema with specific constraints, languages and concepts.
 
@@ -77,7 +78,7 @@ using( var session = store.BeginSession())
 ```
 AcceptChanges method must be called before a session ends else it will be aborted.
 
-All objects manipulations are enabled and domain elements work like any object. References are implemented as **ICollection<T>** (or **IObservableCollection<T>** if the domain is marked as **obervable**)
+All objects manipulations are enabled and domain elements work like any object. References are implemented as **`ICollection<T>`** (or **`IObservableCollection<T>`** if the domain is marked as **observable**)
 
 ```csharp
     using (var session = store.BeginSession())
@@ -147,7 +148,8 @@ Adding undo/redo behavior to a domain, it's very easy :
 
 #### Adding constraints
 
-A modeling framework must provide a way to declare easily constraints. **UML** provides **[OCL](http://en.wikipedia.org/wiki/Object_Constraint_Language)** (Object Constraint Language) to declare constraints. **OCL** is very limited and need to learn new language syntax. Since we are in a C# environment, we can leaverage all the power of C# and specially of **LINQ**.
+A modeling framework must provide a way to declare easily constraints. **UML** provides **[OCL](http://en.wikipedia.org/wiki/Object_Constraint_Language)** (Object Constraint Language) to declare constraints. **OCL** is very limited and need to learn new language syntax.
+Since we are in a C# environment, we can leaverage all the power of C# and specially of **LINQ**.
 
 Constraints with Hyperstore are written in C# and can manipulate all the domain elements and theirs properties.
 
@@ -161,12 +163,12 @@ If you want to add a simple constraint validating the Book property *Copies* are
 * In code first :
 
 ```csharp
-LibraryDefinition.Book.AddImplicitConstraint<Book>(book => book.Copies >= 0,
-     "Invalid value", "Copies");
+LibraryDefinition.Book.AddImplicitConstraint<Book>(book => book.Copies >= 0, "Invalid value", "Copies");
 ```
 
 * Or with the textual language :
-![](/GettingStarted/img/o-constraint.png)
+
+![](/GettingStarted/img/O-constraint.png)
 
 You can obviously add more complicated constraints calling complex code or containing  **LINQ* statement.
 
