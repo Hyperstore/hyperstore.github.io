@@ -4,7 +4,7 @@ title  : Hyperstore Domain Language
 ---
 ## Referencing other domains
 
-You can reference other domains to use theirs definitions by using the **uses** keyword.
+You can reference other domains in order to use theirs definitions by using the **uses** keyword.
 
 ```csharp
 	uses "domain file path" as alias;
@@ -17,7 +17,7 @@ When a domain is referenced you can used its elements by prefixing theirs names 
 
 For example, to reference an element call **Email** in a domain with alias called **std**, use **std.Email** syntax.
 
-> When you reference a domain only its definition is visible, if this domain contains some **uses** statement, they will no take into account.
+> When you reference a domain only its definition is visible, if this domain contains some **uses** statement, they will not be taken into account.
 
 You can have many **uses** statement declarations.
 

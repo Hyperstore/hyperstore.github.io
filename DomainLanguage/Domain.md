@@ -22,11 +22,11 @@ domain qualified_name
 
 ### Attribute
 
-You can the **observable** attribut before the domain definition. This attribute defines the domain as *data binding ready*. This implies the following behaviors :
+You can the attribut **observable** before the domain definition. This attribute defines the domain as *data binding ready*. This implies the following behaviors :
 
 * All domain property changes will raise a **NotifyPropertyChangedEvent**.
 * Collections will be generated as **ObservableCollection** and will raise collection change events.
-* Entities implement **INotifyDataErrorInfo** and are enabled to provide error message when a constraint is not validate.
+* Entities implement **INotifyDataErrorInfo** and are enabled to provide error messages when a constraint is not valid.
 
 To add this attribute just add the word *observable* without parameters like this :
 
@@ -39,7 +39,7 @@ domain Demo.MyModel
 
 ### Domain extension
 
-A domain extension give you the possibility to override an existing domain for adding new element or extending existing elements with new properties or new constraints. An extension can only add artefacts and can not remove or hide existing definition.
+A domain extension gives you the possibility to override an existing domain in order to add new element or extending existing elements with new properties or new constraints. An extension can only add artefacts and can not remove or hide existing definition.
 
 When a domain is extending only the project containg the extension is involved. The extendee domain is not updated.
 

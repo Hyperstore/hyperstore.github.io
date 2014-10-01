@@ -23,7 +23,7 @@ Attributes `::= '[' (name=identifier) [ '(' (parameters=string, ',')* ')' ]`;
 
 DomainBody `::= UsingDeclarations | ExternDeclarations | MemberDeclarations`;
 
-UsingDeclarations `::= (**uses** (DomainReference=string) **as** (alias=identifier) ';')`*` ; 
+UsingDeclarations `::=` (**uses** (DomainReference=string) **as** (alias=identifier) ';')`*` ; 
 
 ExternDeclarations `::=` ( **extern** `[` **interface** `|` **enum** `]  (name=qualified_identifier) `[` **as** identifier `] ';')*`;
 

@@ -13,7 +13,8 @@ def entity MyEntity
 	// Properties, references and constraints definitions
 }
 ```
-If you want override another entity definition, use the **partial** keyword like this :
+
+If you want to override another entity definition, use the **partial** keyword like this :
 
 ```csharp
 def partial entity MyEntity
@@ -37,7 +38,7 @@ Unlike C#, inheritance and implementations use two distinct keywords :
 - BaseEntity must be another entity or an [external definition](../Externals) referencing a type inheriting from **Hyperstore.Modeling.ModelEntity**.
 - Interface implementation must be [external definition](../Externals) referencing an interface.
 
-An entity can contains the following members :
+An entity can contain the following members :
 
 * [Properties](../Properties)
 * [References](../References)
@@ -45,7 +46,8 @@ An entity can contains the following members :
 
 
 #### Code generation attribute
-By default, entity are generated as a *public partial class*. You can modify this declaration with the **modifier** attribute specifing the modifier C# code.
+
+By default, entities are generated as a *public partial class*. You can modify this declaration with the **modifier** attribute specifying the modifier C# code.
 
 For exemple, to declare a **protected abstract** class, use the following syntax :
 
