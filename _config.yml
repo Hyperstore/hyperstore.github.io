@@ -37,6 +37,7 @@ docs:
 - ['/GettingStarted/Store/', 'Getting started', 'Store and domain']
 - ['/GettingStarted/Session/', 'Getting started', 'Session']
 - ['/GettingStarted/Events/', 'Getting started', 'Events']
+- ['/GettingStarted/Undo/', 'Getting started', 'Undo/redo']
 - ['/GettingStarted/Constraints/', 'Getting started', 'Constraints']
 - ['/GettingStarted/Commands/', 'Getting started', 'Commands']
 - ['/DomainLanguage/Introduction/', 'Domain Language', 'Introduction']
